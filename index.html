@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Application Form</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-color: #1f2937;
+            --border-color: #d1d5db;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .form-header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 24px;
+        }
+
+        .form-header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        form {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 28px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 6px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background-color: #fff;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+        }
+
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 6px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        /* Responsive Table */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid var(--border-color);
+            font-size: 0.85rem;
+        }
+
+        th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .coverage-card {
+            background: #fff;
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+
+        .terms-box {
+            background-color: #eef2ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            color: #374151;
+            margin-top: 16px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 20px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-hover);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-header">
+        <h1>Application Form</h1>
+    </div>
+
+    <form action="#" method="POST">
+        
+        <!-- Section A: General Questions -->
+        <div class="section">
+            <h2 class="section-title">A. General Questions</h2>
+            <div class="form-grid">
+                
+                <div class="form-group full-width">
+                    <label for="name">Proposed Insured's Name</label>
+                    <input type="text" id="name" name="name" placeholder="Full Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Birth Date</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" id="male" name="gender" value="Male"> Male</label>
+                        <label class="radio-option"><input type="radio" id="female" name="gender" value="Female"> Female</label>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Street Address, City, Country">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" placeholder="+92 300 0000000">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="id-number">ID Number</label>
+                    <input type="number" id="id-number" name="id_number">
+                </div>
+
+                <div class="form-group">
+                    <label for="ssn">Social Security Number</label>
+                    <input type="number" id="ssn" name="ssn">
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Marital Status</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="status" value="Single"> Single</label>
+                        <label class="radio-option"><input type="radio" name="status" value="Married"> Married</label>
+                        <label class="radio-option"><input type="radio" name="status" value="Divorced"> Divorced</label>
+                        <label class="radio-option"><input type="radio" name="status" value="Other"> Other</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="occupation">Occupation</label>
+                    <input type="text" id="occupation" name="occupation">
+                </div>
+
+                <div class="form-group">
+                    <label>Are you a retiree?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="retiree" value="Yes"> Yes</label>
+                        <label class="radio-option"><input type="radio" name="retiree" value="No"> No</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Section B: Type of Health Coverage -->
+        <div class="section">
+            <h2 class="section-title">B. Type of Health Coverage</h2>
+            
+            <div class="coverage-grid">
+                <div class="coverage-card">
+                    <label><strong>Employee</strong></label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="employee_cov" value="Yes"> Yes</label>
+                        <label class="radio-option"><input type="radio" name="employee_cov" value="No"> No</label>
+                    </div>
+                </div>
+
+                <div class="coverage-card">
+                    <label><strong>Spouse</strong></label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="spouse_cov" value="Yes"> Yes</label>
+                        <label class="radio-option"><input type="radio" name="spouse_cov" value="No"> No</label>
+                    </div>
+                </div>
+
+                <div class="coverage-card">
+                    <label><strong>Children</strong></label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="child_cov" value="Yes"> Yes</label>
+                        <label class="radio-option"><input type="radio" name="child_cov" value="No"> No</label>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <label><strong>Complete if Spouse/Dependents are proposed for Insurance:</strong></label>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>SSN No.</th>
+                            <th>Relationship</th>
+                            <th>Birth Date</th>
+                            <th>Age</th>
+                            <th>Sex</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="dep_name[]"></td>
+                            <td><input type="number" name="dep_ssn[]"></td>
+                            <td><input type="text" name="dep_rel[]"></td>
+                            <td><input type="date" name="dep_dob[]"></td>
+                            <td><input type="number" name="dep_age[]"></td>
+                            <td>
+                                <select name="dep_sex[]">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="dep_name[]"></td>
+                            <td><input type="number" name="dep_ssn[]"></td>
+                            <td><input type="text" name="dep_rel[]"></td>
+                            <td><input type="date" name="dep_dob[]"></td>
+                            <td><input type="number" name="dep_age[]"></td>
+                            <td>
+                                <select name="dep_sex[]">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section C: The Policy -->
+        <div class="section">
+            <h2 class="section-title">C. Policy Details</h2>
+            <div class="form-grid">
+                
+                <div class="form-group">
+                    <label for="units">Units</label>
+                    <input type="text" id="units" name="units">
+                </div>
+
+                <div class="form-group">
+                    <label for="premium">Annual Premium ($)</label>
+                    <input type="number" id="premium" name="premium">
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Payment Mode</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="payment_mode" value="Annual"> Annual</label>
+                        <label class="radio-option"><input type="radio" name="payment_mode" value="Semi-Annual"> Semi-Annual</label>
+                        <label class="radio-option"><input type="radio" name="payment_mode" value="Monthly PAT"> Monthly PAT (Complete PAT card)</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cash_app">Cash with Application ($)</label>
+                    <input type="number" id="cash_app" name="cash_app">
+                </div>
+
+                <div class="form-group">
+                    <label for="planned_premium">Planned Model Premium ($)</label>
+                    <input type="number" id="planned_premium" name="planned_premium">
+                </div>
+
+                <div class="form-group">
+                    <label for="signature">Signature</label>
+                    <input type="text" id="signature" name="signature" placeholder="Type full name as signature">
+                </div>
+
+                <div class="form-group">
+                    <label for="sig_date">Date</label>
+                    <input type="date" id="sig_date" name="sig_date">
+                </div>
+
+            </div>
+
+            <div class="terms-box">
+                <strong>Terms and Conditions:</strong>
+                <p>Improvement should be measured regularly and assessed in order for you to know what is beneficial and what is not. This will help you set new targets.</p>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Application</button>
+
+    </form>
+</div>
+
+</body>
+</html>
